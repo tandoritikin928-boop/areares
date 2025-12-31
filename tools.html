@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Area Hub | Tools</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* ===== 共通世界観 ===== */
+body{
+  margin:0;
+  min-height:100vh;
+  background:#000;
+  color:#e5e7eb;
+  font-family:"Segoe UI",system-ui,sans-serif;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(128,0,255,.22), transparent 55%),
+    radial-gradient(circle at 80% 40%, rgba(0,100,255,.22), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(255,0,80,.16), transparent 60%),
+    linear-gradient(120deg,#020617,#000,#020617);
+  animation:bgFlow 26s ease-in-out infinite alternate;
+  z-index:-2;
+}
+@keyframes bgFlow{
+  from{transform:scale(1);filter:hue-rotate(0deg)}
+  to{transform:scale(1.15);filter:hue-rotate(10deg)}
+}
+.glow{
+  text-shadow:0 0 10px rgba(160,120,255,.6),
+              0 0 28px rgba(120,120,255,.4);
+}
+
+/* ===== NAV ===== */
+nav{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(16px);
+  background:rgba(0,0,0,.6);
+  border-bottom:1px solid rgba(120,120,255,.15);
+}
+nav a{
+  margin:0 1rem;
+  font-weight:800;
+  color:#a5b4fc;
+  transition:.3s;
+}
+nav a:hover{
+  color:#e879f9;
+  text-shadow:0 0 10px rgba(232,121,249,.8);
+}
+
+/* ===== CARD ===== */
+.wrapper{
+  max-width:1100px;
+  margin:3rem auto;
+  padding:2.8rem;
+  border-radius:26px;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(120,120,255,.15);
+  box-shadow:0 0 70px rgba(0,0,0,.9);
+}
+.tool-card{
+  padding:2rem;
+  border-radius:22px;
+  border:1px solid rgba(120,120,255,.25);
+  background:rgba(0,0,0,.4);
+  transition:.35s;
+}
+.tool-card:hover{
+  background:rgba(120,120,255,.06);
+  box-shadow:0 0 28px rgba(120,120,255,.55);
+}
+.link{
+  color:#c7d2fe;
+  text-shadow:0 0 12px rgba(120,120,255,.7);
+}
+.link:hover{color:#f0abfc}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="text-center py-4">
+  <a href="index.html">HOME</a>
+  <a href="scripts.html">Scripts</a>
+  <a href="executors.html">Executors</a>
+  <a href="bypass.html">Bypass</a>
+  <a href="tools.html">Tools</a>
+</nav>
+
+<!-- CONTENT -->
+<section class="wrapper">
+  <h1 class="text-4xl font-black glow mb-10 text-center">Tools</h1>
+
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- E-sign -->
+    <div class="tool-card">
+      <h2 class="text-2xl font-bold glow mb-2">E-sign</h2>
+      <a class="link" href="https://techybuff.com/esign/" target="_blank">
+        https://techybuff.com/esign/
+      </a>
+      <p class="mt-3 opacity-90 leading-relaxed">
+        E-signは、IPAファイルを端末にインストールする際に必要となる
+        署名処理の仕組みを理解するためのツールです。
+        証明書・プロファイル・有効期限といった要素が
+        どのように関連しているかを把握することで、
+        モバイル環境におけるアプリ導入の流れを体系的に学ぶことができます。
+      </p>
+    </div>
+
+    <!-- K-sign -->
+    <div class="tool-card">
+      <h2 class="text-2xl font-bold glow mb-2">K-sign</h2>
+      <a class="link" href="https://khoindvn.io.vn/" target="_blank">
+        https://khoindvn.io.vn/
+      </a>
+      <p class="mt-3 opacity-90 leading-relaxed">
+        K-signはE-signと同系統の署名ツールで、
+        より軽量な構成を好むユーザー向けに参照されることがあります。
+        ツールごとのUI差や動作フローを比較することで、
+        署名プロセスの共通点と違いを理解する目的に向いています。
+      </p>
+    </div>
+
+    <!-- Delta IPA -->
+    <div class="tool-card md:col-span-2">
+      <h2 class="text-2xl font-bold glow mb-2">Delta IPA</h2>
+      <a class="link" href="https://www.mediafire.com/file/i4p17hpjm8q81jc/Delta-2.701.ipa/file" target="_blank">
+        Delta IPA Download
+      </a>
+      <p class="mt-3 opacity-90 leading-relaxed">
+        IPAファイルはiOSアプリの配布形式のひとつです。
+        署名ツールと組み合わせることで端末へ導入されますが、
+        Area Hubでは具体的な回避手順ではなく、
+        ファイル形式・署名の仕組み・導入フロー全体の理解を
+        目的とした情報整理のみを行います。
+        ツールの役割を知ることで、環境ごとの差異を把握しやすくなります。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
