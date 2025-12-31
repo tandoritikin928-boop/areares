@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Area Hub | Executors</title>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="fog"></div>
+
+<nav>
+  <a href="index.html">HOME</a>
+  <a href="executors.html">Executors</a>
+  <a href="scripts.html">Scripts</a>
+  <a href="bypass.html">Bypass</a>
+  <a href="tools.html">Tools</a>
+</nav>
+
+<section class="card" style="max-width:1200px;margin:3rem auto;">
+  <h1 class="glow" style="font-size:2.8rem;font-weight:900;text-align:center;">
+    Executors
+  </h1>
+
+  <p style="text-align:center;opacity:.9;line-height:1.9;margin-top:1rem;">
+    各Executorの特徴・対応環境・安定性を整理しています。  
+    情報は研究・比較目的でまとめられています。
+  </p>
+
+  <!-- Search -->
+  <div style="margin:2.5rem auto;max-width:420px;">
+    <input
+      id="search"
+      type="text"
+      placeholder="Search Executor..."
+      style="
+        width:100%;
+        padding:.8rem 1.2rem;
+        border-radius:999px;
+        background:rgba(0,0,0,.6);
+        border:1px solid rgba(120,120,255,.3);
+        color:#e5e7eb;
+        outline:none;
+      "
+    />
+  </div>
+
+  <!-- Executor Grid -->
+  <div id="grid" class="page"
+    style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem;">
+
+    <!-- Xeno -->
+    <div class="exec-btn">
+      <h2 class="glow">Xeno</h2>
+      <a href="https://www.xeno.onl/" target="_blank">https://www.xeno.onl/</a>
+      <p>
+        PC専用Executor。比較的軽量で安定性が高く、基本的な実行機能を
+        備えています。導入のしやすさと扱いやすさから、
+        初心者から研究用途まで幅広く参照される傾向があります。
+      </p>
+    </div>
+
+    <!-- Solara -->
+    <div class="exec-btn">
+      <h2 class="glow">Solara</h2>
+      <a href="https://getsolara.dev/" target="_blank">https://getsolara.dev/</a>
+      <p>
+        PC向けExecutor。UIが整理されており、機能構成の把握が容易です。
+        動作挙動の確認や処理フローの比較目的として利用されることが多く、
+        研究用途向けに情報が集められています。
+      </p>
+    </div>
+
+    <!-- Velocity -->
+    <div class="exec-btn">
+      <h2 class="glow">Velocity</h2>
+      <a href="https://velocity-executor.com/" target="_blank">
+        https://velocity-executor.com/
+      </a>
+      <p>
+        比較的高速な処理を特徴とするPC Executor。
+        実行時の反応速度や安定性に注目が集まることがあり、
+        他ツールとの比較対象として扱われるケースがあります。
+      </p>
+    </div>
+
+    <!-- Swift -->
+    <div class="exec-btn">
+      <h2 class="glow">Swift</h2>
+      <a href="https://swiftexecutor.com/" target="_blank">
+        https://swiftexecutor.com/
+      </a>
+      <p>
+        シンプルな構成のPC向けExecutor。
+        必要最低限の機能に絞られており、
+        挙動検証やUI構造の研究目的で参照されます。
+      </p>
+    </div>
+
+    <!-- Tidal -->
+    <div class="exec-btn">
+      <h2 class="glow">Tidal</h2>
+      <a href="https://tidalss.neocities.org/" target="_blank">
+        https://tidalss.neocities.org/
+      </a>
+      <p>
+        情報整理型のExecutor配布ページ。
+        機能解説や構成の見せ方が特徴的で、
+        サイト構成の参考資料としても利用されます。
+      </p>
+    </div>
+
+    <!-- Delta -->
+    <div class="exec-btn">
+      <h2 class="glow">Delta (Mobile)</h2>
+      <a href="https://delta-executor.com/" target="_blank">
+        https://delta-executor.com/
+      </a>
+      <p>
+        iOS / Android 向けExecutor。
+        モバイル環境特有の制限や導入フローを理解するための
+        比較対象として扱われることが多いツールです。
+      </p>
+    </div>
+
+    <!-- Codex -->
+    <div class="exec-btn">
+      <h2 class="glow">Codex</h2>
+      <a href="https://codex.lol/" target="_blank">
+        https://codex.lol/
+      </a>
+      <p>
+        モバイル対応Executorの一つ。
+        UI構成や操作導線が整理されており、
+        モバイルExecutorの設計思想を学ぶ参考として参照されます。
+      </p>
+    </div>
+
+    <!-- Arceus X -->
+    <div class="exec-btn">
+      <h2 class="glow">Arceus X</h2>
+      <a href="https://arceusx.com/" target="_blank">
+        https://arceusx.com/
+      </a>
+      <p>
+        比較的知名度の高いモバイルExecutor。
+        更新頻度や提供形態の変化が多く、
+        動向を追う対象として扱われるケースがあります。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script src="assets/js/main.js"></script>
+
+<script>
+/* Search Filter */
+const input = document.getElementById("search");
+const cards = document.querySelectorAll(".exec-btn");
+
+input.addEventListener("input", () => {
+  const v = input.value.toLowerCase();
+  cards.forEach(c => {
+    c.style.display =
+      c.innerText.toLowerCase().includes(v) ? "" : "none";
+  });
+});
+</script>
+
+</body>
+</html>
