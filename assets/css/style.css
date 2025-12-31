@@ -1,0 +1,225 @@
+/* =====================================================
+   Area Hub - Global Style (FINAL)
+   Dark / Purple / Blue / Glow / Mobile Optimized
+===================================================== */
+
+/* ===== Base ===== */
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100%;
+  background:#000;
+  color:#e5e7eb;
+  font-family:"Segoe UI",system-ui,sans-serif;
+  overflow-x:hidden;
+}
+
+/* ===== Animated Background ===== */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-30%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(120,0,255,.28), transparent 55%),
+    radial-gradient(circle at 80% 40%, rgba(0,120,255,.28), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(255,0,80,.18), transparent 60%),
+    linear-gradient(120deg,#020617,#000,#020617);
+  animation:bgFlow 32s ease-in-out infinite alternate;
+  z-index:-3;
+}
+
+@keyframes bgFlow{
+  0%{transform:scale(1);filter:hue-rotate(0deg)}
+  100%{transform:scale(1.18);filter:hue-rotate(14deg)}
+}
+
+/* ===== Fog Layer ===== */
+.fog{
+  pointer-events:none;
+  position:fixed;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(180,150,255,.12), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(120,180,255,.1), transparent 65%);
+  filter:blur(40px);
+  animation:fogMove 40s linear infinite alternate;
+  z-index:-2;
+}
+
+@keyframes fogMove{
+  from{transform:translateX(-4%) scale(1)}
+  to{transform:translateX(4%) scale(1.08)}
+}
+
+/* ===== Glow Text ===== */
+.glow{
+  text-shadow:
+    0 0 8px rgba(160,120,255,.7),
+    0 0 20px rgba(120,120,255,.45),
+    0 0 40px rgba(80,80,255,.25);
+}
+
+/* ===== Navigation ===== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(18px);
+  background:rgba(0,0,0,.55);
+  border-bottom:1px solid rgba(120,120,255,.18);
+}
+
+nav a{
+  margin:0 1rem;
+  font-weight:800;
+  color:#a5b4fc;
+  text-decoration:none;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#e879f9;
+  text-shadow:0 0 14px rgba(232,121,249,.9);
+}
+
+/* ===== Page Fade In ===== */
+.page{
+  animation:pageIn .35s ease-out;
+}
+
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:none}
+}
+
+/* ===== Cards ===== */
+.card,
+.script-card,
+.exec-btn,
+.bypass-card,
+.tool-card{
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(120,120,255,.22);
+  border-radius:22px;
+  transition:.35s;
+}
+
+.card:hover,
+.script-card:hover,
+.exec-btn:hover,
+.bypass-card:hover,
+.tool-card:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 0 22px rgba(120,120,255,.55),
+    0 0 60px rgba(0,0,0,.8);
+}
+
+/* ===== Buttons ===== */
+button{
+  background:transparent;
+  color:#c7d2fe;
+  border:1px solid rgba(120,120,255,.35);
+  border-radius:999px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  background:rgba(120,120,255,.15);
+  box-shadow:0 0 18px rgba(120,120,255,.65);
+}
+
+/* ===== Links ===== */
+a{
+  color:#c7d2fe;
+  text-decoration:none;
+  text-shadow:0 0 10px rgba(120,120,255,.55);
+}
+
+a:hover{
+  color:#f0abfc;
+}
+
+/* ===== Welcome Text (HOME用) ===== */
+.welcome span{
+  display:inline-block;
+  opacity:0;
+  filter:blur(6px);
+  animation:welcomeIn .4s ease forwards;
+}
+
+@keyframes welcomeIn{
+  to{
+    opacity:1;
+    filter:blur(0);
+    text-shadow:
+      0 0 10px rgba(160,120,255,.9),
+      0 0 30px rgba(120,120,255,.6);
+  }
+}
+
+/* ===== Mobile Optimization ===== */
+@media(max-width:768px){
+  nav a{
+    margin:0 .6rem;
+    font-size:.9rem;
+  }
+
+  .card,
+  .script-card,
+  .bypass-card,
+  .tool-card{
+    padding:1.8rem !important;
+  }
+
+  p{
+    font-size:1rem;
+    line-height:1.85;
+    text-shadow:0 0 6px rgba(120,120,255,.35);
+  }
+
+  h1,h2,h3{
+    text-shadow:
+      0 0 12px rgba(160,120,255,.8),
+      0 0 26px rgba(120,120,255,.5);
+  }
+}
+.hero{
+  text-align:center;
+  padding:6rem 1.5rem 4rem;
+}
+
+.title-gradient{
+  font-size:3.2rem;
+  font-weight:900;
+  background:linear-gradient(120deg,#7c7cff,#a855f7,#ef4444);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.welcome{
+  margin:1.2rem 0 2.2rem;
+  opacity:.85;
+}
+
+.hero-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-gif{
+  width:100%;
+  max-width:420px;
+  border-radius:18px;
+  background:#000;
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,.9),
+    0 0 60px rgba(120,120,255,.5);
+  filter:contrast(1.05) saturate(1.1);
+}
